@@ -24,11 +24,7 @@ int main(void)
     CyDelay(5000);
     initRadio();
     DATA MyData;
-    MyData.Count = 0x01;
-//    MyData.message1 = 0xBA;
-//    MyData.message2 = 0x15;
-//    MyData.message3[0] = 'H';MyData.message3[1] = 'e'; MyData.message3[2] = 'l';
-//    MyData.message3[3] = 'l'; MyData.message3[4] = 'o'; MyData.message3[5] = '\0';   
+    MyData.Count = 0x01; 
     
     for(;;)
     {
