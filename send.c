@@ -24,7 +24,11 @@ int main(void)
     CyDelay(5000);
     initRadio();
     DATA MyData;
-    MyData.Count = 0x01; 
+    MyData.Count = 0x01;
+//    MyData.message1 = 0xBA;
+//    MyData.message2 = 0x15;
+//    MyData.message3[0] = 'H';MyData.message3[1] = 'e'; MyData.message3[2] = 'l';
+//    MyData.message3[3] = 'l'; MyData.message3[4] = 'o'; MyData.message3[5] = '\0';   
     
     for(;;)
     {
@@ -36,15 +40,15 @@ int main(void)
         MyData.message3[3] = 'l'; MyData.message3[4] = 'o'; MyData.message3[5] = '\0';   
     
         CyDelay(50);
-        SendByte(MyData.Count);
-        SendByte(MyData.message1);
-        SendByte(MyData.message2);
-//        SendByte(MyData.message3[0]);
-//        SendByte(MyData.message3[1]);
-//        SendByte(MyData.message3[2]);
-//        SendByte(MyData.message3[3]);
-//        SendByte(MyData.message3[4]);
-//        SendByte(MyData.message3[5]);
+        EBYTE_SendByte(MyData.Count);
+        EBYTE_SendByte(MyData.message1);
+        EBYTE_SendByte(MyData.message2);
+//        EBYTE_SendByte(MyData.message3[0]);
+//        EBYTE_SendByte(MyData.message3[1]);
+//        EBYTE_SendByte(MyData.message3[2]);
+//        EBYTE_SendByte(MyData.message3[3]);
+//        EBYTE_SendByte(MyData.message3[4]);
+//        EBYTE_SendByte(MyData.message3[5]);
         UART_1_PutArray((void *)MyData.message3, 6);
         
         
