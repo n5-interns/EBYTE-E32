@@ -31,27 +31,21 @@ int main(void)
         /* Place your application code here. */
         if (available()){
             CyDelay(50);
-            MyData.Count = GetByte();
-            MyData.message1 = GetByte();
-            MyData.message2 = GetByte();
-            MyData.message3[0] = GetByte();
-            MyData.message3[1] = GetByte();
-            MyData.message3[2] = GetByte();
-            MyData.message3[3] = GetByte(); 
-            MyData.message3[4] = GetByte(); 
-            MyData.message3[5] = GetByte();  
+            MyData.Count = EBYTE_GetByte();
+            MyData.message1 = EBYTE_GetByte();
+            MyData.message2 = EBYTE_GetByte();
+            MyData.message3[0] = EBYTE_GetByte();
+            MyData.message3[1] = EBYTE_GetByte();
+            MyData.message3[2] = EBYTE_GetByte();
+            MyData.message3[3] = EBYTE_GetByte(); 
+            MyData.message3[4] = EBYTE_GetByte(); 
+            MyData.message3[5] = EBYTE_GetByte();  
             
-//            while(available()){
-//                sprintf(usbmessage,"%x\n", GetByte());
-//                sendUsb((void *)usbmessage, strlen(usbmessage));
-//            }
                 
             
             sprintf(usbmessage,"count: %d\nMessage1: %x\nMessage2: %x\nMessage3: %s\n", MyData.Count, MyData.message1,MyData.message2, MyData.message3);
             sendUsb((void *)usbmessage, strlen(usbmessage));
-//            sprintf(usbmessage,"-------------\n");
-//            sendUsb((void *)usbmessage, strlen(usbmessage));
-            }
+        }
         
         else{
             sprintf(usbmessage,"Searching: \n");
