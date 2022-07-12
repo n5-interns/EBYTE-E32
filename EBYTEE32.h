@@ -96,10 +96,10 @@
 
     	
     // methods to get data from sending unit
-    uint8_t GetByte();
+    uint8_t EBYTE_GetByte();
 
     // method to send to data to receiving unit
-    void SendByte(uint8_t TheByte);
+    void EBYTE_SendByte(uint8_t TheByte);
 
     // mehod to print parameters
     void PrintParameters();
