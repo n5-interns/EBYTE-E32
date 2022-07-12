@@ -305,7 +305,7 @@ uint8_t GetOptions() {
 	return Radio._Options;
 }
 
-uint8_t GetByte() {
+uint8_t EBYTE_GetByte() {
 
 	return UART_1_GetByte();
    
@@ -313,7 +313,7 @@ uint8_t GetByte() {
 }
 
 
-void SendByte( uint8_t TheByte) {
+void EBYTE_SendByte( uint8_t TheByte) {
 
 	UART_1_PutChar(TheByte);
    
@@ -527,3 +527,4 @@ void ClearBuffer(){
 }
 
 /* [] END OF FILE */
+
