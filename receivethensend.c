@@ -66,14 +66,14 @@ int main(void)
         
         //process data 
         int i;
-        MyData2.Count= MyData.Count +20;
+        MyData2.Count= MyData.Count;
         MyData2.message1 = MyData.message1 +20;
         MyData2.message2 = MyData.message2 + 20;
-        for (i=0;i<6;i++){
+        for (i=0;i<5;i++){
             MyData2.message3[i] = MyData.message3[i] - 32 ;
            
         }
-        
+        MyData2.message3[5] = '\0';
         CyDelay(500);
         
         if (!UART_1_GetRxBufferSize()){
@@ -99,3 +99,5 @@ int main(void)
         
     }
 }
+
+/* [] END OF FILE */
